@@ -11,7 +11,7 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ISellersService, SellersService>();
 
 var app = builder.Build();
-git status
+
 
 
 if (app.Environment.IsDevelopment())
