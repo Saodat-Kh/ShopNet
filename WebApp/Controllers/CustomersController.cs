@@ -6,7 +6,7 @@ namespace WebApp.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public abstract class CustomersController(ICustomerService service) : ControllerBase
+public  class CustomersController(ICustomerService service) : ControllerBase
 {
     
     [HttpPost]
