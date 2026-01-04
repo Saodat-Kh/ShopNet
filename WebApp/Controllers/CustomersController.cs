@@ -16,14 +16,14 @@ public  class CustomersController(ICustomerService service) : ControllerBase
         return Ok(res);
     }
 
-    [HttpPut]
+    [HttpPut("id")]
     public IActionResult UpdateCustomer(Customer customer)
     {
         var res = service.UpdateCustomer(customer);
         return Ok(res);
     }
 
-    [HttpDelete]
+    [HttpDelete("id")]
     public IActionResult DeleteCustomer(int customerId)
     {
         var res = service.DeleteCustomer(customerId);
