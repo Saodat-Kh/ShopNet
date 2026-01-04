@@ -36,9 +36,9 @@ public class SellersController(ISellersService service) : ControllerBase
     }
 
     [HttpDelete]
-    public IActionResult DeleteSeller(Sellers seller)
+    public IActionResult DeleteSeller(int id)
     {
-        var res = service.DeleteSeller(seller);
+        var res = service.DeleteSeller(id);
         return Ok(res);
     }
 }

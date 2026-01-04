@@ -8,5 +8,5 @@ public interface ISellersService
     Sellers GetSellerById(int id);
     bool CreateSeller(Sellers seller);
     bool UpdateSeller(Sellers seller);
-    bool DeleteSeller(Sellers seller);
+    bool DeleteSeller(int id);
 }

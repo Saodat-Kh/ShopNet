@@ -39,7 +39,7 @@ public class SellersService : ISellersService
     {
         var connection = new NpgsqlConnection(a);
         connection.Open();
-        const string query = @"Select * FROM  Sellers;";
+        const string query = @"Select * FROM  Sellers  where  Id = @id;";
         var command = new NpgsqlCommand(query, connection);
         command.Parameters.AddWithValue("@id", id);
         var reader = command.ExecuteReader();
@@ -99,13 +99,13 @@ public class SellersService : ISellersService
     #endregion
 
     #region DeleteSeller
-    public bool DeleteSeller(Sellers seller)
+    public bool DeleteSeller(int id)
     {
         var connection = new NpgsqlConnection(a);
         connection.Open();
         const string query = @"DELETE FROM Sellers WHERE Id = @id";
         var command = new NpgsqlCommand(query, connection);
-        command.Parameters.AddWithValue("@id", seller.Id);
+        command.Parameters.AddWithValue("@id",id );
         var res = command.ExecuteNonQuery();
         connection.Close();
         return res > 0;
