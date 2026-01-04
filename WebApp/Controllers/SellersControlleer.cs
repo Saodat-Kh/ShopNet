@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApp.Controllers;
 [ApiController]
 [Route("api/[controller]")]
-public class SellersControlleer(ISellersService service) : ControllerBase
+public class SellersController(ISellersService service) : ControllerBase
 {
     [HttpGet]
     public IActionResult GetAllSellers()
