@@ -14,7 +14,7 @@ public class ProductsController(IProductsService service) : ControllerBase
         return Ok(res);
     }
 
-    [HttpGet("id")]
+    [HttpGet("{id}")]
     public IActionResult GetProductById(int id)
     {
         var res = service.GetProductById(id);
@@ -41,5 +41,27 @@ public class ProductsController(IProductsService service) : ControllerBase
         var res = service.DeleteProduct(id);
         return Ok(res);
     }
+
+    [HttpGet("serch{name}")]
+    public IActionResult SearchProducts(string name)
+    {
+        var res = service.SearchProducts(name);
+        return Ok(res);
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult GetProductByCategoryId(int categoryId)
+    {
+        var res = service.GetProductByCategoryId(categoryId);
+        return Ok(res);
+    }
+
+    [HttpGet]
+    public IActionResult GetProductBySellerId(int sellerId)
+    {
+        var res = service.GetProductBySellerId(sellerId);
+        return Ok(res);
+    }
+    
     
 }
